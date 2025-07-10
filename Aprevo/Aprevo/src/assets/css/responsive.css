@@ -1,0 +1,60 @@
+/* src/assets/css/responsive.css */
+
+:root {
+  --mobile: 480px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --desktop: 1200px;
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .responsive-container {
+    padding: 12px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .dash-navbar,
+  .nav-buttons {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  .nav-buttons button {
+    width: 100%;
+  }
+
+  .popup,
+  .content-area,
+  .key-box {
+    width: 90% !important;
+  }
+
+  input,
+  button {
+    font-size: 0.95rem !important;
+    padding: 12px !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .content-area,
+  .popup {
+    width: 85% !important;
+  }
+
+  .key-box {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* Laptops */
+@media (max-width: 1024px) {
+  .content-area,
+  .popup {
+    width: 80% !important;
+  }
+}

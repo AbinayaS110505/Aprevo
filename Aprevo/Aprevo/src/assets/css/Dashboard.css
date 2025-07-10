@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f7fb;
+}
+
+.preflight-dashboard {
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 60px;
+}
+
+.dash-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: white;
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #9ce6dc, #6be2f1); /* base gradient */
+  overflow: hidden;
+}
+
+/* Flight shimmer layer */
+.dash-navbar::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 250%;
+  height: 250%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: rotate(45deg);
+  animation: navbar-glow 4s linear infinite;
+  z-index: 0;
+}
+
+/* Ensure content stays above the glow */
+.dash-navbar * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation Keyframes */
+@keyframes navbar-glow {
+  0% {
+    transform: translate(-100%, -100%) rotate(45deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(45deg);
+  }
+}
+
+.dash-navbar button {
+  margin-left: 12px;
+  background: linear-gradient(135deg, #0d6efd, #0069d9);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.4);
+  width: 120px;
+  height: 44px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.dash-navbar button::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  animation: flight-glow 3s linear infinite;
+}
+
+.dash-navbar button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+@keyframes flight-glow {
+  0% { transform: translate(-100%, -100%) rotate(45deg); }
+  100% { transform: translate(100%, 100%) rotate(45deg); }
+}
+
+.gradient-input {
+  flex: 1;
+  font-size: 1.2rem;
+  padding: 16px 18px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, #1dc2f5, #f7a1f7);
+  color: white;
+  font-weight: bold;
+  outline: none;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.gradient-input::placeholder {
+  color: white;
+}
+
+.dash-navbar button:hover {
+  background: #ffc300;
+  transform: scale(1.05);
+}
+
+.content-area {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='password'] {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+  background-color: #fcfcfc;
+  transition: border 0.3s ease, background-color 0.2s ease;
+}
+
+.key-valid {
+  border: 2px solid #28a745 !important;
+  background-color: #eaffea;
+}
+
+.check-input {
+  margin-bottom: 24px;
+  padding: 20px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 14px;
+  background: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.key-box {
+  display: flex;          /* Enable flex to make input and button side by side */
+  gap: 16px;              /* Space between input and button */
+  align-items: center;    /* Align vertically */
+  margin-bottom: 20px;    /* Optional spacing below */
+  flex-wrap: wrap;        /* Helps in responsiveness */
+}
+
+.key-box input {
+  flex: 1;
+  font-size: 1.2rem;
+  padding: 16px 18px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, #5f9eff, #f7a1f7);
+  color: white;
+  font-weight: bold;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.key-box input::placeholder {
+  color: white;
+}
+
+.key-box button {
+  width: 30%;
+  height: 54px;
+  padding: 10px 10px;
+  border: none;
+  
+  gap: 12px; 
+  justify-content: center; 
+
+  border-radius: 30px;
+  background: linear-gradient(to right, #5f9eff, #f7a1f7);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.key-box button:hover {
+  transform: scale(1.1) rotate(1deg);
+  background: linear-gradient(to right, #ff6fa3, #8bc6ff);
+}
+
+.check-input.valid {
+  border-color: #28a745;
+  background-color: #e6ffe6;
+}
+
+.check-input.invalid {
+  border-color: #dc3545;
+  background-color: #ffe6e6;
+}
+
+.check-input label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #003566;
+  font-size: 1rem;
+}
+
+.proceed-btn {
+  background: linear-gradient(to right, #48eb07, #60ec60);
+  color: white;
+  padding: 14px;
+  width: 100%;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.2s, background 0.3s;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.proceed-btn:hover {
+  background: lch(82.29% 71.91 143.3);
+  transform: scale(1.05);
+}
+
+.copilot-box {
+  background: #e9f5ff;
+  border-left: 5px solid #0077b6;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.copilot-box h4 {
+  color: #003566;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}

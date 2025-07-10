@@ -1,0 +1,92 @@
+.emergency-container {
+  height: 100vh;
+  background: radial-gradient(circle, #ff4d4d, #660000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emergency-btn {
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff0000, #b30000);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.emergency-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.9);
+}
+
+.popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: popup-fade 0.3s ease;
+}
+
+@keyframes popup-fade {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-box h2 {
+  margin-bottom: 20px;
+  color: #b30000;
+}
+
+.popup-box select,
+.popup-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.submit-alert {
+  background: linear-gradient(to right, #ff4d4d, #ff8080);
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-alert:hover {
+  background: #cc0000;
+  transform: scale(1.05);
+}

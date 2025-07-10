@@ -1,0 +1,67 @@
+.ai-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffe4f2;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.ai-container h2 {
+  margin-bottom: 16px;
+  color: #d63384;
+}
+
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.chat-entry {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.chat-entry.user {
+  background: #ffd1e8;
+  align-self: flex-end;
+  float: right;
+}
+
+.chat-entry.bot {
+  background: #f9f0ff;
+  align-self: flex-start;
+  float: left;
+}
+
+.ai-form {
+  display: flex;
+  gap: 8px;
+}
+
+.ai-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d63384;
+  border-radius: 20px;
+  outline: none;
+}
+
+.ai-form button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff66b3, #ff33cc);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}

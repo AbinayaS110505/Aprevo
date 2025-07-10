@@ -1,0 +1,72 @@
+/* Navbar container */
+.dash-navbar {
+  background-color: #003566;
+  color: white;
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Logo style */
+.dash-navbar .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Button container */
+.dash-navbar .nav-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+/* Flight-style glowing buttons */
+.dash-navbar .nav-buttons button {
+  width: 120px;
+  height: 44px;
+  background: linear-gradient(135deg, #0d6efd, #0069d9);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Glowing shimmer effect */
+.dash-navbar .nav-buttons button::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  animation: flight-glow 3s linear infinite;
+}
+
+/* Hover glow */
+.dash-navbar .nav-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+/* Shimmer keyframe */
+@keyframes flight-glow {
+  0% { transform: translate(-100%, -100%) rotate(45deg); }
+  100% { transform: translate(100%, 100%) rotate(45deg); }
+}
